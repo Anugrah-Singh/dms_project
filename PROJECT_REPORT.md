@@ -12,12 +12,15 @@ CryptoRand is an interactive web application designed to demonstrate and educate
 ## 2. Introduction
 
 ### 2.1 Motivation
+
 The motivation behind CryptoRand is to bridge the gap between theoretical discrete mathematics concepts and their practical applications in cryptography, specifically in the domain of pseudo-random number generation. Many students find it challenging to grasp these concepts without interactive and visual tools. This project serves as a hands-on platform for learning and experimentation.
 
 ### 2.2 Problem Statement
+
 Understanding the intricacies of PRNGs, their strengths, weaknesses, and the discrete mathematical principles they are built upon (e.g., modular arithmetic, number theory) can be complex. CryptoRand addresses this by providing an accessible environment to explore these topics interactively.
 
 ### 2.3 Project Goals and Objectives
+
 *   To implement common PRNGs (LCG, BBS) based on discrete mathematics.
 *   To allow users to interactively adjust PRNG parameters and observe outcomes.
 *   To provide clear visualizations (histograms, scatter plots) of PRNG outputs.
@@ -38,6 +41,7 @@ CryptoRand is a web application that offers a comprehensive platform for explori
 ## 4. Technical Details
 
 ### 4.1 Tech Stack
+
 *   **Frontend:** Vite with React (for a fast, dynamic UI)
 *   **Styling:** Tailwind CSS (for a modern, responsive design)
 *   **Visualizations:** Chart.js
@@ -49,6 +53,7 @@ CryptoRand is a web application that offers a comprehensive platform for explori
 ### 4.2 PRNG Implementations
 
 #### 4.2.1 Linear Congruential Generator (LCG)
+
 *   **Mathematical Formula:** `X_n+1 = (a * X_n + c) mod m`
     *   `X_n` is the current state (or number).
     *   `X_n+1` is the next state.
@@ -60,6 +65,7 @@ CryptoRand is a web application that offers a comprehensive platform for explori
 *   **Implementation:** The Flask backend implements the LCG algorithm, allowing users to set `a`, `c`, `m`, and the seed via the frontend.
 
 #### 4.2.2 Blum Blum Shub (BBS)
+
 *   **Mathematical Formula:** `X_n+1 = X_n^2 mod M`
     *   `M = p * q`, where `p` and `q` are large prime numbers, both congruent to 3 (mod 4).
     *   The seed `X_0` must be coprime to `M`.
@@ -68,11 +74,14 @@ CryptoRand is a web application that offers a comprehensive platform for explori
 *   **Implementation:** The Flask backend implements BBS, allowing users to (potentially) set the seed, or use pre-defined `p` and `q` for `M`. The generation of suitable primes `p` and `q` is a critical part.
 
 ### 4.3 Visualizations
+
 Chart.js is used to create:
+
 *   **Histograms:** To show the frequency distribution of the generated numbers. A good PRNG should produce a relatively uniform distribution.
 *   **Scatter Plots:** (e.g., plotting `X_n` vs `X_n+1`) To help visualize patterns, correlations, or the length of cycles in the PRNG output. These can highlight weaknesses in certain PRNG configurations.
 
 ### 4.4 AI Integration (Gemma 3)
+
 *   **Role:** The AI tutor, powered by Gemma 3 (hosted locally via LM Studio), provides:
     *   Explanations of discrete math concepts relevant to PRNGs (e.g., modular arithmetic, prime numbers, quadratic residues, entropy).
     *   Insights into how PRNGs are used in cryptography (e.g., for generating keys, nonces).
@@ -80,7 +89,12 @@ Chart.js is used to create:
 *   **Integration:** The Flask backend communicates with the LM Studio API to send user queries or PRNG data to Gemma 3 and relays the AI's responses back to the frontend.
 
 ### 4.5 Statistical Tests
+
 *   The project includes statistical tests, such as the chi-square test, to analyze the randomness of the generated sequences. The results of these tests are presented to the user, often with AI-powered explanations of their significance.
+
+### 4.6 Source Code Repository
+
+*   The complete source code for the CryptoRand project is available on GitHub: [https://github.com/Anugrah-Singh/dms_project](https://github.com/Anugrah-Singh/dms_project)
 
 ## 5. Discrete Mathematics Concepts Applied
 
@@ -116,11 +130,13 @@ CryptoRand aims to be a powerful educational tool by:
 ## 8. Challenges and Future Work (Optional Section)
 
 ### 8.1 Challenges
+
 *   Integrating the local LLM (Gemma 3 via LM Studio) smoothly with the Flask backend and ensuring real-time, relevant responses.
 *   Designing effective visualizations that clearly convey the properties (and flaws) of PRNGs.
 *   Creating educational content that is both accurate and easy to understand for a diverse audience.
 
 ### 8.2 Future Work
+
 *   Implement additional PRNGs (e.g., Mersenne Twister, cryptographic stream ciphers).
 *   Expand the range of statistical tests for randomness.
 *   Develop more advanced cryptographic demonstrations (e.g., simple encryption/decryption using PRNG-generated keys).
