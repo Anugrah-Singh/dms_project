@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Custom Scrollbar Styles */
+/* For Webkit browsers (Chrome, Safari, newer Edge) */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the scrollbar for horizontal scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b; /* bg-slate-800 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a5568; /* A darker gray, e.g., slate-600 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #718096; /* A lighter gray for hover, e.g., slate-500 */
+}
+
+/* For Firefox */
+/* Firefox scrollbar styling is less customizable but these are standard */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #4a5568 #1e293b; /* thumb and track color (slate-600 and slate-800) */
+}
+
+/* Optional: Add a subtle body background pattern if desired */
+/* body {
+  background-image: radial-gradient(circle at top left, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 20%),
+                    radial-gradient(circle at bottom right, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 20%);
+  background-color: #0f172a; /* bg-slate-900 - ensure this matches App.jsx's body bg */
+/* } */
